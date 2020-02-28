@@ -47,6 +47,8 @@ namespace AnonymusPollKata
                 } while (!canProceed);
             }
 
+            Console.Clear();
+
             foreach (var student in studentsToFind)
             {
                 var studentsStrList = studentFinder.Find(student);

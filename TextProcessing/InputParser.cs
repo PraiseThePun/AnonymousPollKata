@@ -7,6 +7,8 @@ namespace TextProcessing
 	{
 		public static Student ParseStudent(string rawStudentStr)
 		{
+			rawStudentStr = rawStudentStr.Replace("\r", "");
+
 			if (!InputValidator.IsValidStudent(rawStudentStr))
 			{
 				throw new ArgumentException("The student string is not properly formatted");
@@ -25,7 +27,7 @@ namespace TextProcessing
 		public static Student ParseStudentWithName(string rawStudentStr)
 		{
 			var firstComaIndex = rawStudentStr.IndexOf(',');
-			var student = ParseStudent(rawStudentStr.Substring(firstComaIndex + 1, rawStudentStr.Length - 1));
+			var student = ParseStudent(rawStudentStr.Substring(firstComaIndex + 1, rawStudentStr.Length - (firstComaIndex + 1)));
 			student.Name = rawStudentStr.Substring(0, firstComaIndex);
 
 			return student;
