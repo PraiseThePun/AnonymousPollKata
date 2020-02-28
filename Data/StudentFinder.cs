@@ -9,7 +9,7 @@ namespace DataProcessing
     public class StudentFinder
     {
         private readonly ITextFileLoader textFileLoader;
-        private List<Student> studentDicctionary;
+        private static List<Student> studentDicctionary;
 
         public StudentFinder() : this(new TextFileLoaderWrapper())
         {
@@ -27,11 +27,21 @@ namespace DataProcessing
             studentDicctionary = textFileLoader.LoadStudentsFromFile();
         }
 
-        public IEnumerable<string> Find(Student studentToFind)
+        private IEnumerable<string> Find(Student studentToFind)
         {
-            var result = from studentDicct in studentDicctionary
+            return from studentDicct in studentDicctionary
                          where studentDicct.Equals(studentToFind)
                          select studentDicct.Name;
+        }
+
+        public IDictionary<int, List<string>> FindAll(IEnumerable<Student> studentToFind)
+        {
+            var result = new Dictionary<int, List<string>>();
+
+            for (int i = 0; i < studentToFind.Count(); i++)
+            {
+                result.Add(i, Find(studentToFind.ElementAt(i)).ToList());
+            }
 
             return result;
         }

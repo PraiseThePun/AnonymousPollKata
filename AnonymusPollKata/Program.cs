@@ -1,7 +1,6 @@
 ﻿using DataProcessing;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using TextProcessing;
 
 namespace AnonymusPollKata
@@ -48,20 +47,8 @@ namespace AnonymusPollKata
 
             Console.Clear();
 
-            foreach (var student in studentsToFind)
-            {
-                var studentsStrList = studentFinder.Find(student);
-
-                if (!studentsStrList.Any())
-                {
-                    Console.WriteLine("Case #" + studentsToFind.IndexOf(student) + ": NONE");
-                }
-                else
-                {
-                    studentsStrList = ResultUtils.SortLexicographically(studentsStrList.ToList());
-                    Console.WriteLine("Case #" + studentsToFind.IndexOf(student) + ": " + ResultUtils.FormatStudentToString(studentsStrList));
-                }
-            }
+            var foundStudents = studentFinder.FindAll(studentsToFind);
+            Console.WriteLine(ResultUtils.FormatStudentResult(foundStudents));
 
             Console.ReadKey();
         }

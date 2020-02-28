@@ -1,24 +1,44 @@
-﻿using System.Collections.Generic;
+﻿using AnonymusPollKata;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DataProcessing
 {
     public static class ResultUtils
     {
-        public static List<string> SortLexicographically(List<string> names)
+        private static IEnumerable<string> SortLexicographically(IEnumerable<string> names)
         {
             return names.OrderByDescending(s => s.Length)
-                .ThenBy(s => s)
-                .ToList();
+                .ThenBy(s => s);
         }
 
-        public static string FormatStudentToString(IEnumerable<string> students)
+        private static string FormatStudentToString(IEnumerable<string> students)
         {
             var result = string.Empty;
 
             foreach (var student in students)
             {
                 result += students.ElementAt(students.Count() - 1) != student ? student + ", " : student;
+            }
+
+            return result;
+        }
+
+        public static string FormatStudentResult(IDictionary<int, List<string>> studentDicctionary)
+        {
+            var result = "";
+
+            foreach (KeyValuePair<int, List<string>> studentEnum in studentDicctionary)
+            {
+                if (studentEnum.Value.Count == 0)
+                {
+                    result += "Case #" + studentEnum.Key + ": NONE\n";
+                }
+                else
+                {
+                    var sortedRes = SortLexicographically(studentEnum.Value);
+                    result += "Case #" + studentEnum.Key + ": " + FormatStudentToString(sortedRes) + "\n";
+                }
             }
 
             return result;
