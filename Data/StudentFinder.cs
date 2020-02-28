@@ -38,9 +38,9 @@ namespace DataProcessing
         {
             var result = new Dictionary<int, List<string>>();
 
-            for (int i = 0; i < studentToFind.Count(); i++)
+            for (int i = 1; i <= studentToFind.Count(); i++)
             {
-                result.Add(i, Find(studentToFind.ElementAt(i)).ToList());
+                result.Add(i, Find(studentToFind.ElementAt(i - 1)).ToList());
             }
 
             return result;

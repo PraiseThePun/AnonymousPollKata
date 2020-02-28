@@ -55,7 +55,7 @@ namespace DataProcessingTest
 		{
 			var studentToFind = new List<Student>() { new Student('M', 21, "Human Resources Management", 3) };
 			var expected = Enumerable.Empty<string>();
-			var actual = studentFinder.FindAll(studentToFind)[0];
+			var actual = studentFinder.FindAll(studentToFind)[1];
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -65,9 +65,9 @@ namespace DataProcessingTest
 		{
 			const string EXPECTED = "Morgan Martinez Moore";
 			var studentToFind = new List<Student>() { new Student('F', 20, "Systems Engineering", 2) };
-			var actual = studentFinder.FindAll(studentToFind)[0];
+			var actual = studentFinder.FindAll(studentToFind)[1];
 
-			Assert.AreEqual(EXPECTED, actual.First());
+			Assert.AreEqual(EXPECTED, actual[0]);
 		}
 
 		[Test]
@@ -75,7 +75,7 @@ namespace DataProcessingTest
 		{
 			List<string> expected = new List<string>() { "Mohammad Green Morales", "Oliver Carter Rivera" };
 			var studentsToFind = new List<Student>() { new Student('M', 18, "Electrical Engineering", 4) };
-			var actual = studentFinder.FindAll(studentsToFind)[0];
+			var actual = studentFinder.FindAll(studentsToFind)[1];
 
 			CollectionAssert.AreEqual(expected, actual);
 		}

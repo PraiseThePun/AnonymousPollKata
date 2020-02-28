@@ -7,51 +7,33 @@ namespace DataProcessingTest
 	[TestFixture]
 	public class ResultUtilsTest
 	{
-		private List<Student> students;
+		private IDictionary<int, List<string>> students;
 
 		[SetUp]
 		public void SetUp()
 		{
-			students = new List<Student>() {
-				new Student()
-				{
-					Name = "Morgan Martinez Moore",
-					Gender = 'F',
-					Age = 20,
-					Education = "Systems Engineering",
-					AcademicYear = 2
-				},
-				new Student()
-				{
-					Name = "Alfie Hernandez Diaz",
-					Gender = 'M',
-					Age = 20,
-					Education = "Manufacturing Engineering",
-					AcademicYear = 3
-				},
-				new Student()
-				{
-					Name = "Oliver Carter Rivera",
-					Gender = 'M',
-					Age = 18,
-					Education = "Electrical Engineering",
-					AcademicYear = 2
-				},
+			students = new Dictionary<int, List<string>>
+			{
+				{ 1, new List<string>() },
+				{ 2, new List<string>() { "Morgan Martinez Moore" } },
+				{ 3, new List<string>() { "Alfie Hernandez Diaz" } },
+				{ 4, new List<string>() { "Oliver Carter Rivera", "Mohammad Green Morales" } },
+				{ 5, new List<string>() { "Laura Stewart Foster", "Nicole Peterson Torres", "Ellie Brown Reed" } }
 			};
 		}
 
 		[Test]
 		public void FormatStudentsToStringTest()
 		{
-			var expected = "Case #1: NONE\n" +
+			const string EXPECTED = "Case #1: NONE\n" +
 				"Case #2: Morgan Martinez Moore\n" +
-				"Case #3: Alfie Hernandez Diaz" +
-				"Case #4: Mohammad Green Morales,Oliver Carter Rivera" +
-				"Case #5: Ellie Brown Reed,Laura Stewart Foster,Nicole Peterson Torres";
+				"Case #3: Alfie Hernandez Diaz\n" +
+				"Case #4: Mohammad Green Morales, Oliver Carter Rivera\n" +
+				"Case #5: Ellie Brown Reed, Laura Stewart Foster, Nicole Peterson Torres\n";
 
-			//var actual = ResultUtils.FormatStudentResult(students);
+			var actual = ResultUtils.FormatStudentResult(students);
 
-			//Assert.AreEqual(expected, actual);
+			Assert.AreEqual(EXPECTED, actual);
 		}
 	}
 }
