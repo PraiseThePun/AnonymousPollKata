@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProcessing", "Data\Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentRepository", "StudentRepository\StudentRepository.csproj", "{D2B15264-4B0A-40D1-AA1B-663EA5380421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymusPollKata_Test", "AnonymusPollKata_Test\AnonymusPollKata_Test.csproj", "{C8702B28-4D2B-49FE-AD27-93A281707CC4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessingTest", "DataProcessingTest\DataProcessingTest.csproj", "{EECD25F1-BA97-4AC4-B68B-A80693F44B5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessingTest", "TextProcessingTest\TextProcessingTest.csproj", "{3090B95B-F3DB-4941-825F-8E90B1341BD5}"
@@ -39,10 +37,6 @@ Global
 		{D2B15264-4B0A-40D1-AA1B-663EA5380421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2B15264-4B0A-40D1-AA1B-663EA5380421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2B15264-4B0A-40D1-AA1B-663EA5380421}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8702B28-4D2B-49FE-AD27-93A281707CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8702B28-4D2B-49FE-AD27-93A281707CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8702B28-4D2B-49FE-AD27-93A281707CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8702B28-4D2B-49FE-AD27-93A281707CC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EECD25F1-BA97-4AC4-B68B-A80693F44B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EECD25F1-BA97-4AC4-B68B-A80693F44B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EECD25F1-BA97-4AC4-B68B-A80693F44B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU

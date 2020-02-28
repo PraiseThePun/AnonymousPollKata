@@ -10,19 +10,19 @@ namespace AnonymusPollKata
     {
         private static void Main(string[] args)
         {
-            int casesIteration;
+            int casesIteration = 0;
             var studentsToFind = new List<Student>();
             var studentFinder = new StudentFinder();
 
             do
             {
-                if (!int.TryParse(Console.ReadLine(), out casesIteration))
+                try
                 {
-                    Console.WriteLine("Input has to be a valid digit character.");
+                    casesIteration = InputParser.ParseCasesNumber(Console.ReadLine());
                 }
-                else if (casesIteration > 100 || casesIteration < 1)
+                catch (ArgumentException ex)
                 {
-                    Console.WriteLine("The number of students to look up has to be between 1 and 100");
+                    Console.WriteLine(ex.Message);
                 }
             } while (casesIteration > 100 || casesIteration < 1);
 

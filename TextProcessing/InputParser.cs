@@ -32,5 +32,19 @@ namespace TextProcessing
 
 			return student;
 		}
+
+		public static int ParseCasesNumber(string casesIteration)
+		{
+			if (!int.TryParse(casesIteration, out int result))
+			{
+				throw new ArgumentException("Input has to be a valid digit character");
+			}
+			else if (!InputValidator.IsValidCaseNumber(result))
+			{
+				throw new ArgumentException("The number of students to look up has to be between 1 and 100");
+			}
+
+			return result;
+		}
 	}
 }

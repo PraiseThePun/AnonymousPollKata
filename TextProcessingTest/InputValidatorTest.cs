@@ -31,5 +31,17 @@ namespace TextProcessingTest
 		{
 			Assert.IsFalse(InputValidator.IsValidStudent(rawStudentStr));
 		}
+
+		[Test]
+		public void CaseNumberIsValid([Values(1, 50, 100)] int number)
+		{
+			Assert.IsTrue(InputValidator.IsValidCaseNumber(number));
+		}
+
+		[Test]
+		public void CaseNumberIsNotValid([Values(0, 101)] int number)
+		{
+			Assert.IsFalse(InputValidator.IsValidCaseNumber(number));
+		}
 	}
 }

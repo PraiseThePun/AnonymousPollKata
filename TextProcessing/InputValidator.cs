@@ -10,5 +10,10 @@ namespace TextProcessing
 
 			return match.Success;
 		}
+
+		public static bool IsValidCaseNumber(int number)
+		{
+			return number <= 100 && number >= 1;
+		}
 	}
 }
