@@ -18,12 +18,11 @@ namespace AnonymusPollKata
             {
                 if (!int.TryParse(Console.ReadLine(), out casesIteration))
                 {
-                    throw new Exception("Input has to be a valid digit character.");
+                    Console.WriteLine("Input has to be a valid digit character.");
                 }
-
-                if (casesIteration > 100 || casesIteration < 1)
+                else if (casesIteration > 100 || casesIteration < 1)
                 {
-                    throw new Exception("The number of students to look up has to be between 1 and 100");
+                    Console.WriteLine("The number of students to look up has to be between 1 and 100");
                 }
             } while (casesIteration > 100 || casesIteration < 1);
 
