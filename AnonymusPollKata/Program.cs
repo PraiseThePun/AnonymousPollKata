@@ -1,4 +1,5 @@
 ﻿using DataProcessing;
+using ObjectFactory;
 using System;
 using System.Collections.Generic;
 using TextProcessing;
@@ -12,6 +13,7 @@ namespace AnonymusPollKata
             int casesIteration = 0;
             var studentsToFind = new List<Student>();
             var studentFinder = new StudentFinder();
+            var studentFactory = new StudentFactory();
 
             do
             {
@@ -35,7 +37,7 @@ namespace AnonymusPollKata
 
                     try
                     {
-                        studentsToFind.Add(InputParser.ParseStudent(rawStudentStr));
+                        studentsToFind.Add(studentFactory.Parse(rawStudentStr));
                         canProceed = true;
                     }
                     catch (ArgumentException ex)

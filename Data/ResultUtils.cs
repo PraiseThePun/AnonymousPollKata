@@ -1,5 +1,4 @@
-﻿using AnonymusPollKata;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace DataProcessing
@@ -8,13 +7,6 @@ namespace DataProcessing
     {
         private static IEnumerable<string> SortLexicographically(IEnumerable<string> names)
         {
-            //return from name in names
-            //       orderby name.Length descending, name
-            //       select name;
-
-            //return names.OrderByDescending(s => s.Length)
-            //    .ThenBy(s => s);
-
             return names.OrderBy(x => x).ThenBy(x => x.Length);
         }
 

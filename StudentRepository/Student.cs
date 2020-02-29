@@ -2,11 +2,11 @@
 {
 	public class Student
 	{
-		public string Name { get; set; }
-		public char Gender { get; set; }
-		public int Age { get; set; }
-		public string Education { get; set; }
-		public int AcademicYear { get; set; }
+		public string Name { get; }
+		public char Gender { get; }
+		public int Age { get; }
+		public string Education { get; }
+		public int AcademicYear { get; }
 
 		public Student(char gender, int age, string education, int academicYear)
 		{
@@ -14,10 +14,6 @@
 			Age = age;
 			Education = education;
 			AcademicYear = academicYear;
-		}
-
-		public Student()
-		{
 		}
 
 		public bool Equals(Student toCompare)

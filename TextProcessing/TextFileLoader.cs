@@ -1,18 +1,19 @@
-﻿using AnonymusPollKata;
+﻿using ObjectFactory;
 using System.Collections.Generic;
 
 namespace TextProcessing
 {
-	public static class TextFileLoader
+	public class TextFileLoader<T, U> where T : IFactory<U>
 	{
-		public static List<Student> LoadStudentsFromFile()
+        private readonly T factory;
+
+		public List<U> LoadObjectsFromFile(string fileToText)
 		{
-			var fileToText = Properties.Resources.Students;
-			var result = new List<Student>();
+			var result = new List<U>();
 
 			foreach (var line in fileToText.Split('\n'))
 			{
-				result.Add(InputParser.ParseStudentWithName(line));
+				result.Add(factory.Parse(line));
 			}
 
 			return result;

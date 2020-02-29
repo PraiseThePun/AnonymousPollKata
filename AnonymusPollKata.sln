@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessingTest", "DataP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessingTest", "TextProcessingTest\TextProcessingTest.csproj", "{3090B95B-F3DB-4941-825F-8E90B1341BD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectFactory", "ObjectFactory\ObjectFactory.csproj", "{583FACA5-ABEF-4F03-9BD5-F05AA653D1C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3090B95B-F3DB-4941-825F-8E90B1341BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3090B95B-F3DB-4941-825F-8E90B1341BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3090B95B-F3DB-4941-825F-8E90B1341BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583FACA5-ABEF-4F03-9BD5-F05AA653D1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583FACA5-ABEF-4F03-9BD5-F05AA653D1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583FACA5-ABEF-4F03-9BD5-F05AA653D1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583FACA5-ABEF-4F03-9BD5-F05AA653D1C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

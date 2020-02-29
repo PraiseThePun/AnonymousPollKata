@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ObjectFactory\ObjectFactory.csproj" />
     <ProjectReference Include="..\StudentRepository\StudentRepository.csproj" />
   </ItemGroup>
 
@@ -30,5 +31,4 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
 </Project>

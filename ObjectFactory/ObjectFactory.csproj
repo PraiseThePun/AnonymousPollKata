@@ -6,6 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentRepository\StudentRepository.csproj" />
-    <ProjectReference Include="..\TextProcessing\TextProcessing.csproj" />
   </ItemGroup>
+
 </Project>
