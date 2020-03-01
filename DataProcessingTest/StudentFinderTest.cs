@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AnonymusPollKata;
 using DataProcessing;
 using Moq;
 using NUnit.Framework;
-using TextProcessing.Interfaces;
+using TextLoaderFactory;
 
 namespace DataProcessingTest
 {
@@ -12,46 +11,28 @@ namespace DataProcessingTest
 	public class StudentFinderTest
 	{
 		private StudentFinder studentFinder;
-		private Mock<ITextFileLoader> textFileLoaderMock;
+		private Mock<TextFileLoader> textLoaderMock;
+		private StudentFactory studentFactoryMock;
 
 		[SetUp]
 		public void SetUp()
 		{
-			textFileLoaderMock = new Mock<ITextFileLoader>(MockBehavior.Strict);
+			studentFinder = new StudentFinder(FileStore.Properties.Resources.Students);
+			studentFactoryMock = new StudentFactory();
+			textLoaderMock = new Mock<TextFileLoader>(MockBehavior.Strict);
 
-			var returnStudentsList = new List<Student>()
+			var returnStudentsList = new List<ReadableObject>()
 			{
-				new Student()
-				{
-					Gender = 'F',
-					Age = 20,
-					Education = "Systems Engineering",
-					AcademicYear = 2,
-					Name = "Morgan Martinez Moore",
-				},
-				new Student()
-				{
-					Gender = 'M',
-					Age = 18,
-					Education = "Electrical Engineering",
-					AcademicYear = 4,
-					Name = "Mohammad Green Morales",
-				},new Student()
-				{
-					Gender = 'M',
-					Age = 18,
-					Education = "Electrical Engineering",
-					AcademicYear = 4,
-					Name = "Oliver Carter Rivera",
-				}
+				new Student("Morgan Martinez Moore", 'F', 20, "Systems Engineering", 2),
+				new Student("Mohammad Green Morales", 'M', 18,"Electrical Engineering",4),
+				new Student("Oliver Carter Rivera", 'M', 18, "Electrical Engineering", 4)
 			};
 
-			textFileLoaderMock.Setup(x => x.LoadStudentsFromFile()).Returns(returnStudentsList);
-			studentFinder = new StudentFinder(textFileLoaderMock.Object);
+			textLoaderMock.Setup(x => x.LoadObjectsFromFile(It.IsAny<string>(), studentFactoryMock)).Returns(returnStudentsList);
 		}
 
 		[Test]
-		public void ReturnsNullWhenNoCoincidences()
+		public void ReturnsEmptyListWhenNoCoincidences()
 		{
 			var studentToFind = new List<Student>() { new Student('M', 21, "Human Resources Management", 3) };
 			var expected = Enumerable.Empty<string>();

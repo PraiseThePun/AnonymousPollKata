@@ -80,9 +80,13 @@
       <Project>{B4BC041D-1643-4F85-917A-A858FA8264F8}</Project>
       <Name>DataProcessing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StudentRepository\StudentRepository.csproj">
-      <Project>{D2B15264-4B0A-40D1-AA1B-663EA5380421}</Project>
-      <Name>StudentRepository</Name>
+    <ProjectReference Include="..\FileStore\FileStore.csproj">
+      <Project>{cb0ceaca-e638-4876-8269-b55922ccdfe3}</Project>
+      <Name>FileStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextLoaderFactory\TextLoaderFactory.csproj">
+      <Project>{243770A7-5259-4A84-920F-B9D07F9B043B}</Project>
+      <Name>TextLoaderFactory</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextProcessing\TextProcessing.csproj">
       <Project>{0B38F010-1DC8-41B0-A35E-AD713E8DBE09}</Project>

@@ -55,17 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputParserTest.cs" />
-    <Compile Include="InputValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudentRepository\StudentRepository.csproj">
-      <Project>{D2B15264-4B0A-40D1-AA1B-663EA5380421}</Project>
-      <Name>StudentRepository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TextProcessing\TextProcessing.csproj">
       <Project>{0B38F010-1DC8-41B0-A35E-AD713E8DBE09}</Project>
       <Name>TextProcessing</Name>

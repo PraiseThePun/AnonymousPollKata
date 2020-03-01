@@ -1,7 +1,7 @@
 ﻿using DataProcessing;
-using ObjectFactory;
 using System;
 using System.Collections.Generic;
+using TextLoaderFactory;
 using TextProcessing;
 
 namespace AnonymusPollKata
@@ -12,7 +12,7 @@ namespace AnonymusPollKata
         {
             int casesIteration = 0;
             var studentsToFind = new List<Student>();
-            var studentFinder = new StudentFinder();
+            var studentFinder = new StudentFinder(FileStore.Properties.Resources.Students);
             var studentFactory = new StudentFactory();
 
             do
@@ -37,7 +37,7 @@ namespace AnonymusPollKata
 
                     try
                     {
-                        studentsToFind.Add(studentFactory.Parse(rawStudentStr));
+                        studentsToFind.Add((Student)studentFactory.ReadToObject(rawStudentStr));
                         canProceed = true;
                     }
                     catch (ArgumentException ex)

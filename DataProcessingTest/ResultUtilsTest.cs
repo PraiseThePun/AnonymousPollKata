@@ -1,5 +1,4 @@
-﻿using AnonymusPollKata;
-using DataProcessing;
+﻿using DataProcessing;
 using NUnit.Framework;
 using System.Collections.Generic;
 namespace DataProcessingTest

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentRepository\StudentRepository.csproj" />
+    <ProjectReference Include="..\TextLoaderFactory\TextLoaderFactory.csproj" />
     <ProjectReference Include="..\TextProcessing\TextProcessing.csproj" />
   </ItemGroup>
 </Project>

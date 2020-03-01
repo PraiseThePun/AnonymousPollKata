@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TextProcessing.Properties {
+namespace FileStore.Properties {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace TextProcessing.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace TextProcessing.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TextProcessing.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FileStore.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,12 +51,32 @@ namespace TextProcessing.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sophia Wright Torres,F,23,Radiologic Technology,1
+        ///Chloe Gomez Green,F,22,Diagnostic Radiography,2
+        ///Emma Scott Reed,F,27,Plant Science,1
+        ///Phoebe Miller Cook,F,23,Cognitive Science,5
+        ///Yasmin Barnes Martinez,F,21,Diagnostic Radiography,1
+        ///Morgan Edwards Morales,F,18,Information Technology,3
+        ///Muhammad Turner Edwards,M,25,Engineering Science,2
+        ///Max Hall Peterson,M,23,Criminal Justice,2
+        ///Jennifer Martin Bell,F,18,Computer Science,2
+        ///Lucy Richardson Gray,F,25,Agriculture,3
+        ///Jasmine Wood Flores,F,21,Physics,2
+        ///Jay White Hall [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Students {
+            get {
+                return ResourceManager.GetString("Students", resourceCulture);
             }
         }
     }

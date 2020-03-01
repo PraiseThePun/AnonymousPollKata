@@ -1,6 +1,4 @@
-﻿using TextLoaderFactory;
-
-namespace AnonymusPollKata
+﻿namespace TextLoaderFactory
 {
 	public class Student : ReadableObject
 	{
