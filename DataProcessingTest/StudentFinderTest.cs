@@ -28,7 +28,7 @@ namespace DataProcessingTest
 				new Student("Oliver Carter Rivera", 'M', 18, "Electrical Engineering", 4)
 			};
 
-			textLoaderMock.Setup(x => x.LoadObjectsFromFile(It.IsAny<string>(), studentFactoryMock)).Returns(returnStudentsList);
+			textLoaderMock.Setup(x => x.LoadObjectsFromFile<Student, StudentFactory>(It.IsAny<string>(), studentFactoryMock)).Returns(returnStudentsList);
 		}
 
 		[Test]

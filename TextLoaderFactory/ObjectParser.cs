@@ -1,7 +1,7 @@
 ﻿namespace TextLoaderFactory
 {
-    public abstract class ObjectParser
+    public abstract class ObjectParser<T> where T : ReadableObject
     {
-        public abstract ReadableObject ReadToObject(string text);
+        public abstract T ReadToObject(string text);
     }
 }

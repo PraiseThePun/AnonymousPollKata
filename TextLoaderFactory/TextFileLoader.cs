@@ -4,7 +4,9 @@ namespace TextLoaderFactory
 {
     public class TextFileLoader
     {
-		public virtual List<ReadableObject> LoadObjectsFromFile<T>(string fileToText, T parser) where T : ObjectParser
+		public virtual List<ReadableObject> LoadObjectsFromFile<T, U>(string fileToText, U parser)
+			where T : ReadableObject
+			where U : ObjectParser<T>
 		{
 			var result = new List<ReadableObject>();
 

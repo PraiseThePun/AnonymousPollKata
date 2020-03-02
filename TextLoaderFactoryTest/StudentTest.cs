@@ -3,7 +3,7 @@ using TextLoaderFactory;
 
 namespace TextLoaderFactoryTest
 {
-    public class Tests
+    public class StudentTest
     {
         [Test]
         public void ReturnsTrueWhenStudentsAreEqual()

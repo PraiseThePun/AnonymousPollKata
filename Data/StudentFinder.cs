@@ -14,7 +14,7 @@ namespace DataProcessing
         {
             textFileLoader = new TextFileLoader();
             studentFactory = new StudentFactory();
-            studentDictionary = textFileLoader.LoadObjectsFromFile(studentsDB, studentFactory).Cast<Student>().ToList();
+            studentDictionary = textFileLoader.LoadObjectsFromFile<Student, StudentFactory>(studentsDB, studentFactory).Cast<Student>().ToList();
         }
 
         private IEnumerable<string> Find(Student studentToFind)

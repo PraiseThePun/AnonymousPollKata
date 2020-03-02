@@ -3,9 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace TextLoaderFactory
 {
-    public class StudentFactory : ObjectParser
+    public class StudentFactory : ObjectParser<Student>
     {
-        public override ReadableObject ReadToObject(string text)
+        public override Student ReadToObject(string text)
         {
 			var match = Regex.Match(text, @"([^,]+),(M|m|F|f),(\d+),([^,]+),(\d+)");
 
